@@ -1,58 +1,68 @@
+````markdown
 # 🚚 SWIFT Assignment – Transit Performance Analysis
 
-This project analyzes shipment tracking data to evaluate **transit performance** and **delivery efficiency** using a provided JSON dataset.
+This project analyzes shipment tracking data to evaluate **transit performance** and **delivery efficiency** using the provided JSON dataset.
 
 ---
 
 ## 📁 Files
-transit_performance_analysis.py # Main script
-Swift Assignment 4 - Dataset (1).json # Input dataset (place in same folder)
-transit_performance_detailed.csv # Shipment-level output
-transit_performance_summary.csv # Overall summary output
-transit_service_comparison.csv # Optional service-type summary
 
-yaml
-Copy code
+| File | Description |
+|------|--------------|
+| `transit_performance_analysis.py` | Main Python script |
+| `Swift Assignment 4 - Dataset (1).json` | Input dataset (place in same folder as script) |
+| `transit_performance_detailed.csv` | Shipment-level detailed output |
+| `transit_performance_summary.csv` | Overall performance summary |
+| `transit_service_comparison.csv` | Optional summary grouped by service type |
 
 ---
 
 ## ⚙️ How to Run
 
-1. Place the JSON file in the **same folder** as the script.
+1. Place the JSON file (`Swift Assignment 4 - Dataset (1).json`) in the same folder as the script.  
 2. Install dependencies:
    ```bash
    pip install pandas numpy
-Run:
+````
 
-bash
-Copy code
-python transit_performance_analysis.py
-📊 Output Files
-File	Description
-transit_performance_detailed.csv	Shipment-level detailed metrics
-transit_performance_summary.csv	Overall transit performance summary
-transit_service_comparison.csv	Service-type comparison summary
+3. Run the analysis:
 
-🧮 Metrics Calculated
-Total transit time (in hours)
+   ```bash
+   python transit_performance_analysis.py
+   ```
 
-Facilities visited
+After execution, three CSV files will be created automatically in the same folder.
 
-In-transit events
+---
 
-Average hours per facility
+## 📊 Output Files
 
-Out-for-delivery attempts
+| File                                 | Description                                                         |
+| ------------------------------------ | ------------------------------------------------------------------- |
+| **transit_performance_detailed.csv** | Contains shipment-level detailed transit metrics                    |
+| **transit_performance_summary.csv**  | Provides overall statistics like average, median, and total metrics |
+| **transit_service_comparison.csv**   | Summarizes average transit hours and facilities by service type     |
 
-First-attempt delivery status
+---
 
-Service type (Express/Standard)
+## 🧮 Metrics Calculated
 
-✅ Features
-Handles missing/null data
+* Total transit time (in hours)
+* Number of facilities visited
+* In-transit event count
+* Average hours per facility
+* Out-for-delivery attempts
+* First-attempt delivery status
+* Service classification (Express / Standard)
 
-Supports multiple timestamp formats ($numberLong, ISO)
+---
 
-Removes duplicate or invalid events
+## ✅ Features
 
-Exports clean, analysis-ready CSVs
+* Handles missing and null values gracefully
+* Supports multiple timestamp formats (`$numberLong`, ISO)
+* Removes duplicate or invalid events
+* Automatically generates clean, analysis-ready CSV outputs
+* Works directly with raw FedEx-style tracking data
+
+---
